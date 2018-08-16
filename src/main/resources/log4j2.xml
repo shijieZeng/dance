@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration monitorInterval="30" >
+	<properties>
+		<!-- 日志路径 /data1/logs/app/tomcat/resume_gateway/${sys:log4jport} -->
+		<property name="LOG_PATH">/data1/logs/app/tomcat/gateway_scheduled</property>
+	</properties>
+
+
+	<appenders>
+		<!--这个输出控制台的配置-->
+		<console name="console" target="SYSTEM_OUT">
+			<!--输出日志的格式-->
+			<PatternLayout pattern="[%d{yyyy-MM-dd HH:mm:ss.SSS}] [%-5p] [%t] [%c{1}:%L] %m%n"/>
+		</console>
+	</appenders>
+
+	<loggers>
+		<root level="info">
+			<appender-ref ref="console"/>
+		</root>
+
+		<logger name="com.course" additivity="true" level="debug">
+		</logger>
+
+	</loggers>
+</configuration>
