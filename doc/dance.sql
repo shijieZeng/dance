@@ -13,6 +13,11 @@ File Encoding         : 65001
 Date: 2018-08-16 12:29:11
 */
 
+drop database if exists dance;
+create database dance default character set utf8;
+use dance;
+
+
 SET FOREIGN_KEY_CHECKS=0;
 
 -- ----------------------------
