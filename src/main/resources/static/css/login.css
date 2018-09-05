@@ -1,0 +1,49 @@
+
+/*---------------------reset----------------------*/
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { margin:0; padding:0; border:0; outline:0;}
+ol, ul, li { list-style:none; } 
+body { background:#FFF;}
+:focus { outline:0 }
+table { border-collapse:collapse; border-spacing:0 }
+table,table td,table th{border:1px solid #edeada;border-collapse:collapse;}
+address, cite, code, dfn, em, var, i { font-style:normal }
+input[type=button], input[type=submit], button { cursor:pointer; outline:none;}
+.input, select { vertical-align:middle; }
+* html .clearfix { zoom:1; }
+*+html .clearfix { zoom:1; }
+textarea{resize:none;}
+a { text-decoration:none; color:#009bd8; }
+.clearfix:after {clear: both;content: ".";display: block;height: 0;overflow: hidden;visibility: hidden;}
+.pos-r{ position:relative;}
+.hide{ display:none;}
+.fz12{font-size:12px;}
+.btn-login:hover{background-color: #ffa507;}
+/*---------------------banner----------------------*/
+.banner{ width:1500px;  position:relative;  height:804px; overflow:hidden;background:url('../images/login/pic1.jpg') no-repeat center top; margin: 20px auto; }
+.footer{text-align:center; font-size:12px; color:#fff;position: relative;top: 750px;}
+.login-aside{position:absolute; width:395px;  z-index:9999999; border-radius:5px; left:37%; top:40px;}
+.login-aside .logo{width:395px;  position:relative;  height:92px; overflow:hidden;background:url('../images/login/logo.png') no-repeat center ;margin-bottom: 30px;}
+.error-box{color:#fff;font-size:12px;margin-bottom:10px;}
+label.form-label {display: block;float: none;height: auto;line-height: 12px;text-align: left;width: auto;font-size:14px;color:#fff;font-weight:bold;
+	text-shadow:1px 1px 1px #4e6877;-o-text-shadow:1px 1px 1px #4e6877;-o-moz-shadow:1px 1px 1px #4e6877;-o-mis-shadow:1px 1px 1px #4e6877;-o-webkit-shadow:1px 1px 1px #4e6877;
+	margin-top:16px;margin-bottom:16px;}
+.box-up,.box-down {width:395px;height:382px;position:absolute;border-radius:6px;}
+.box-up {background-color:#1e1e1e;filter:alpha(opacity:35);opacity:0.35;border:1px solid #fff;}
+.box-down{ padding:30px 0 0 20px;}
+.i-text{  width:356px; height:40px; border-radius:6px;line-height:40px;border:1px solid #fff;background:#000;color:#fff;font-size:14px; text-indent:12px; filter:alpha(opacity:15);opacity:0.15;}
+.yzm{ width:112px;}
+.yzm-img{ position:absolute; left:130px; top:30px; cursor:pointer;}
+.btn-login{ width:358px; height:50px; background:#FA6E28; border:none; margin-top:5px;color: #fff;font-size: 20px;}
+.h-light{border:1px solid #80acd9;background:#fff;color:#9cb5cd;font-size:14px; text-indent:12px; border-color: #0787be;
+  box-shadow: 0 1px 4px rgba(11, 122, 179, 0.65) inset, 0 0 14px rgba(11, 122, 179, 0.45);}
+.ui-form-explain{margin-top: 5px;position: relative;padding-left: 30px;}
+.ui-form-explain em {display: block;position: absolute;top: 0px;left: 10px;cursor: pointer;}
+.icon-biaozhi {background: url('../images/login/icon-biaoshi.png') no-repeat  -2px -1px transparent;width: 16px;height: 16px;}
+
+
+
+
+
+
+
+

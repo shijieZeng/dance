@@ -12,7 +12,7 @@ import java.util.List;
  */
 public interface TeacherMapper {
     /**
-     * 根据id获取学员信息
+     * 根据id获取老师信息
      * @param id
      * @return
      */

@@ -1,0 +1,203 @@
+@charset "utf-8";
+/*consumption*/
+/***********公用按钮样式 start**********/
+.button{display:block;width:125px; height:30px; text-decoration:none;  border-radius:5px; float:left;font-size:14px; text-align:center; line-height:30px;margin-top: 10px}
+.separator {font-style: normal;color: #ccc;}
+.wz-blue{ color: #6f7d95;}  
+.border-bottom{border-bottom: 0 !important;}
+/***********公用按钮样式 end**********/
+/***********设备状态页面 start**********/
+.text-20{line-height: 20px !important;}
+.right .box {border: 1px solid #e6e6e6;background: #fff;border-radius: 4px;margin-top: 30px;width: 960px;float: left;}
+.right .box .top{ height:39px; border-bottom:1px solid #e6e6e6; background:#fafafa; font-size:14px; color:#757575; line-height:39px; -webkit-border-top-left-radius:7px; -webkit-border-top-right-radius:7px; margin-top:2px;}
+.right .box .top h2{ font-size:18px; color:#838d9b; line-height:37px; padding-left:15px; float:left;font-weight: normal;}
+.right .box1{  width:960px; float: left; }
+/********表格头部 start*******/
+.cart-thead {height: 50px;background-color: #bcc8d8;width: 960px;}
+.clearfix {display: block;}
+.column {width: 150px;height: 50px;float: left;color: #6f7d95;line-height: 50px;text-align: center;font-size: 14px;}
+.column-2 {width: 100px;height: 50px;float: left;color: #6f7d95;line-height: 50px;text-align: center;font-size: 14px;}
+.column-3{width: 103px;height: 40px;float: left;line-height: 40px;text-align: center;}
+.column-dd{float: left;border-top: 1px solid #e6e6e6;color: #6f7d95;}
+.cart-thead-box{width: 920px;position: relative;float: left;padding-left: 19px;}
+.t-question {width: 510px;}
+.t-AP{width: 80px;}
+.t-shebei2{width: 140px;}
+.t-time{width: 110px;}
+.t-flow2{width: 135px;}
+.t-pic{width: 50px;}
+.t-time-2{width: 135px;}
+.t-shichang {width: 200px;}
+/********表格头部 end*******/
+/********表格body start*******/
+.cart-body {background-color: #ffffff;position: relative;}
+.cart-thead-box-2{width: 920px;position: relative;float: left;margin-left: 20px;border-bottom: 1px solid #e6e6e6;}
+.cart-thead-box-2:hover *{color: #f9a727; cursor: pointer}
+.cart-thead-box-2 .check a{background: url(../images/icon-eye.png) center right no-repeat;width: 20px;height: 40px;display: block;padding-left: 10px;}
+.cart-thead-box-2 .check a:hover{background: url(../images/icon-eye-hover.png) center right no-repeat;width: 20px;height: 40px;display: block;}
+.none { display:none;}
+.cart-thead-box-blue{color: #fff !important;background-color: #ffb4b4;width: 940px;margin-left: 0;padding-left: 20px;}
+.check-2 a{background: url(../images/icon-eye-white.png) center right no-repeat !important ;width: 20px;height: 40px;display: block;padding-left: 10px;}
+.check-2 a:hover{background: url(../images/icon-eye-hover.png) center right no-repeat !important ;width: 20px;height: 40px;display: block;padding-left: 10px;}
+/********表格body end*******/
+/********翻页 start*******/
+.box .foot{position: relative;float: right;padding-right: 40px;padding-bottom: 16px;}
+.quantity-form a {width: 11px;height: 20px; margin-top: 3px;float: left;
+    display: block;overflow: hidden;line-height: 13px;background: url(../images/arrow-page.png) center right no-repeat;text-align: center;}
+.quantity-form .decrement{background-position:  -23px 0;margin-right: 24px;} 
+.quantity-form .increment{background-position:  -8px 0;margin-left: 24px;} 
+.quantity-form .decrement:hover{background-position:  -40px 0;} 
+.quantity-form .increment:hover{background-position:  -57px 0;} 
+.quantity-form span{float: left;margin-top: 2px;}
+.quantity-form input {float: left; }
+.quantity-form .quantity-text {width: 28px;height: 20px;border: 1px solid #c8c8c8;overflow: hidden;text-align: center;background-color: #fff;color: #6f7076;}
+.quantity-form em{color: #6f7076;padding-right: 5px;padding-left: 5px;}
+/********翻页 end*******/
+.td-80{width: 80px;}
+.td-90{width: 90px;}
+.td-100{width: 100px;}
+.td-110{width: 110px;}
+.td-120{width: 120px;}
+.td-130{width: 130px;}
+.td-140{width: 140px;}
+.td-150{width: 150px;}
+.td-200{width: 200px;}
+.td-210{width: 210px;}
+.td-50{width: 50px;}
+.tb {border-top: none;background: #fff;}
+.tb1 table{padding-left: 20px;}
+.tb1 .tthA  {background: #bcc8d8;color: #6f7d95;font-size: 14px;height: 50px;}
+.tb1 .tthA:hover {background: #bcc8d8;color: #6f7d95;font-size: 14px;}
+.tb1 .tthA  th{font-weight: normal;}
+.tb1 tr {color: #838d9b;border-bottom: 1px solid #e6e6e6;height: 40px;}
+.tb1 tr:hover {color: #f9a727; cursor: pointer}
+.tb1 .last-tr{border-bottom: 0px solid #e6e6e6;}
+.tb1 .trA {color: #838d9b;}
+.tb1 .ulym {width: 350px;margin: 0 auto;}
+.tb1{padding-left: 20px;}
+.box2 .tbB .tb {border-top: none;padding-bottom: 20px;background: #fff;}
+.box2 .tbB .tb1 .tthA {background: #bcc8d8;color: #6f7d95;font-size: 14px;}
+.box2 .tbB .tb1 .tthA:hover {background: #bcc8d8;color: #6f7d95;font-size: 14px;}
+.box2 .tbB .tb1 tr {line-height: 40px;color: #838d9b;border-bottom: 1px solid #e6e6e6;}
+.box2 .tbB .tb1 tr:hover {color: #f9a727; cursor: pointer}
+.box2 .tbB .tb1 .last-tr{border-bottom: 0px ;}
+.box2 .tbB .tb1 .trA {color: #838d9b;}
+.box2 .tbB .tb1 .ulym {width: 350px;margin: 0 auto;}
+.right_box{width: 100%; margin-left: 200px; float: none;}
+.right_box .demo{width:960px;  border-top: none;padding-bottom: 20px;background: #fff;}
+.right_box .demo .box{ height:50px; }
+.right_box .demo .box h1{ height:50px; background:#00bdb7; border-top-left-radius:5px; border-top-right-radius:5px; line-height:50px; padding-left:20px; font-size:16px; color:#fff; position:relative;}
+.right_box .demo .button_1{float: right;height: 50px;line-height: 50px;margin-right: 50px;}
+.right_box .demo .button_1 a{ display:block;width:100px; height:30px; text-decoration:none; border:1px solid #e46248;  border-radius:5px; background:#e97656; float:left; color:#fff; font-size:14px; text-align:center; line-height:30px;margin-top: 10px}
+.right_box .demo .button_1 a:hover{ border:1px solid #ff6946;background:#e05236;  }
+.right_box .demo h2{font-size:14px;height:24px;line-height:24px;margin:30px 0 10px 0;padding:0 10px;}
+.right_box .demo .menu_head_2{cursor:pointer;position:relative;}
+.right_box .demo .menu_list .current{background:#fff ; }
+.right_box .demo .menu_body{display:none;height: 100px;margin-left: 20px;}
+.right_box .demo .menu_body a{display:block;color:#006699;background-color:#EFEFEF;padding-left:10px;font-weight:bold;text-decoration:none;height:24px;line-height:24px;}
+.right_box .demo .menu_body a:hover{color:#000000;text-decoration:underline;}
+.right_box .demo .button_box{height: 70px;padding-left: 58px;}
+.right_box .demo .button_2 a{ border:1px solid #ff6946;  background:#e05236; color:#fff; }
+.right_box .demo .button_2 a:hover{ border:1px solid #e46248;background:#e97656;  }
+.right_box .demo .button_3 a{ border:1px solid #07efe8;  background:#00bdb7; color:#fff; margin-left: 30px;}
+.right_box .demo .button_3 a:hover{ border:1px solid #00bdb7;background:#00cac5;  }
+.right_box .menu_head a {font-size:12px;line-height:20px;color:#0088CC;padding-top:4px;font-weight: normal;padding-left: 5px;}
+.right_box .menu_head a:hover {text-decoration:underline;}
+/***********设备状态页面 end**********/
+/***********流量权限页面 start**********/
+.cart-thead .t-shuliang {width: 200px;}
+.cart-thead .t-xianzhi {width: 80px;}
+.cart-thead .t-xianzhi2 {width: 120px;}
+.text-right {text-align: right;}
+.btn {border-radius: 0px !important;background:url(../images/button.png) center right no-repeat;width: 90px;height: 28px;float: left;display: block;line-height: 28px;}
+.btn-2 {border-radius: 0px !important;background:url(../images/button.png) center right no-repeat;width: 110px;height: 26px;float: left;display: block;line-height: 26px;
+padding-right: 20px;margin-top: 5px;}
+.btn.btn-success {background-position: -29px -97px;color: #fff;text-decoration: none;}
+.btn.btn-danger {background-position: -29px -32px;color: #fff;text-decoration: none;margin-left: 20px;}
+.btn.btn-success:hover {background-position: -29px -65px;color: #6f7d95;text-decoration: none;}
+.btn.btn-danger:hover {background-position: -29px 0;color: #e59080;text-decoration: none;}
+.btn-2.btn-leixing {background-position: -19px -160px;color: #6f7d95;text-decoration: none;}
+.btn-2.btn-leixing:hover {background-position: -19px -130px;text-decoration: none;}
+.btn-2 em{font-size: 12px;padding-left: 27px;}
+.btn em{padding-left: 20px; }
+.text-btn{float: right;}
+/***********流量权限页面 end**********/
+/***********账号管理 start**********/
+.cart-thead .t-gnleibie {width: 480px;}
+.text-link a{padding-left: 10px;color: #838d9b;text-decoration: none;}
+.text-link a:hover{padding-left: 10px;color: #f9a727;text-decoration: none;}
+.wz-blue{color: #838d9b;}
+.text-btn div{margin-right: 34px;}
+.btn.btn-password {background-position: -29px -194px;color: #6f7d95;text-decoration: none;margin-left: 20px;font-size: 12px;line-height: 26px;margin: 5px 20px 0 0;}
+.btn.btn-password:hover {background-position: -29px -225px;text-decoration: none;}
+/***********账号管理 end**********/
+/***********页面配置页面 start**********/
+.box-left{margin-top: 25px;margin-bottom: 30px;}
+.box-right{margin-top: 94px;}
+.box-right .box-nav{width: 420px;}
+.box-right .box-nav li {float: left;position: relative;width: 83px;padding-left: 18px;}
+.box-right .box-content{border: 1px solid #e6e6e6;background: #fff;border-radius: 4px;margin-top: 60px;width: 420px;height: 300px; margin-left: 5px;}
+.box-right .box-content .top{top: -2px;position: relative; height:50px; border-bottom:1px solid #e6e6e6; background:#bcc8d8; font-size:14px; color:#6f7d95; line-height:50px; border-top-left-radius:4px; border-top-right-radius:4px;}
+.box-right .box-content .top h2{ font-size:14px; color:#838d9b; line-height:50px; padding-left:44px; float:left;font-weight: normal;}
+.box-right .box-content .box-text{width: 378px;}
+.box-right .box-content .box-text li{float: left;position: relative;width: 378px;height: 50px; border-bottom:1px solid #e6e6e6;line-height: 50px;}
+.box-right .box-content .box-text span{padding-left:50px; }
+.btn-3 {border-radius: 0px !important;background:url(../images/button.png) center right no-repeat ;width: 90px;height: 30px;float: left;display: block;line-height: 30px;padding-left: 27px;}
+.btn-nav{background-position: -29px -255px;color: #fff !important ;text-decoration: none;}
+.btn-nav:hover{background-position: -29px -289px;color: #6f7d95 !important;text-decoration: none;}
+.pl-65{padding-left: 65px !important;}
+.pl-75{padding-left: 75px !important;}
+/***********页面配置页面 end**********/
+/***********弹窗-添加权限类型 start**********/
+.btn-submit {border-radius: 0px !important;background:url(../images/button.png) center right no-repeat;width: 90px;height: 30px;float: left;display: block;line-height: 30px;}
+.btn-submit-red{background-position:  -30px -361px;!important;}
+.btn-submit-blue{background-position:  -29px -255px;}
+.btn-submit-red:hover{background-position:  -31px -396px;color: #e59080 !important;}
+.btn-submit-blue:hover{background-position:  -29px -325px;color: #acb9ca !important;}
+.coordinates{position:relative;top:-50px;width:562px;height: 362px; margin:0px auto 0px; color: #757575;background: none repeat scroll 0% 0% #fff;border:1px solid #d2d2d2;border-radius:4px;}
+.coordinates .box{ height:50px; }
+.coordinates .box h1{top: -12px; height:50px; background:#bcc8d8; border-top-left-radius:4px; border-top-right-radius:4px; line-height:50px;position:relative;font-weight: normal;text-align: center;}
+.coordinates .button_box{height: 30px;position: relative;top: 30px;left: 65px;}
+.coordinates .button_box a{text-align: center;text-decoration: none;color: #fff ;}
+.coordinates-content{position: relative; top:5px;padding-bottom: 30px; border-bottom:1px solid #eff2f5;}
+.coordinates-content .xiala{position: relative;background:url(../images/xiala.gif) center right no-repeat ;width: 440px;height: 30px;padding-left: 65px;}
+.coordinates .ui-checkbox{position: relative;top:16px;background:url(../images/juxingkuang.gif) center right no-repeat ;width: 440px;height: 161px;padding-left: 65px;}
+.coordinates .ui-checkbox-2{background:url(../images/juxingkuang-2.gif) center right no-repeat ;width: 440px;height: 70px;}
+.coordinates-content .xiala-text{line-height: 30px;width: 100px;text-align: center;}
+.select_blue{ background:#09F;}
+.xiala-input p {overflow: hidden;border: 1px solid #CCC;height: 28px;}
+.xiala-input select {border: 0px none;width: 339px;margin: -1px 0px 0px;height: 29px;line-height: 29px;}
+.coordinates-content .lh-height{position: relative;top: 20px;}.lh-height2{position: relative;top: 60px;}
+.ui-checkbox-form{position: relative;top:15px;}
+.ui-checkbox-form .ui-checkbox-1{position: relative;left: 30px;height: 25px;}
+.ui-checkbox-form input {border:1px solid #d2d2d2;}
+.ui-checkbox-form input.i-text {height: 25px;}
+.ui-checkbox-form input.i-text-amount {width: 130px;font-weight: 700;}
+.ui-checkbox-form label{line-height: 25px;width: 82px;display: block;float: left;}
+.ui-checkbox-form .checkbox-span{display: block;float: left;padding-top: 6px;}
+.coordinates .button_box .btn-right{padding-right: 123px;float: right;}
+/***********弹窗-添加权限类型 end**********/
+/***********弹窗-新增用户类型 start**********/
+.mt-33{margin-top: 33px;}
+.height-450{height: 450px;}
+.coordinates-content .xiala-2{position: relative;background:url(../images/xiala-2.gif) center right no-repeat ;width: 440px;height: 30px;padding-left: 65px;top: 8px;}
+.xiala-2 .i-text{width:338px;height: 28px;border:1px solid #d2d2d2;}
+.section {padding: 5px 0px 0px; float: left;width: 340px;}
+.section input {margin: 0px 3px 0px 0px;vertical-align: middle;cursor: pointer;float: left;height: 30px;}
+.section label {padding-right: 5px;cursor: pointer;float: left;line-height: 30px;}
+.ui-checkbox-form-2{position: relative;width: 300px;margin-left: 30px;}
+.section span{display: block;float: left;width: 140px;}
+.width-340{width: 340px;}
+.pb-15{padding-bottom: 15px;}
+.coordinates .button_box-2{height: 30px;position: relative;top: 15px;left: 65px;}
+.i-text-2{width:180px;height: 23px !important;border:1px solid #d2d2d2;line-height: 23px;}
+.btn-submit-blue-2{border: 0px none;background-position:  -51px -433px;width: 50px; height: 23px !important; line-height: 23px;text-align: center;text-decoration: none;color: #fff  !important;margin-left: 5px;}
+.btn-submit-blue-2:hover{background-position:  -51px -460px;color: #acb9ca !important;text-decoration: none;}
+/***********弹窗-新增用户类型 end**********/
+/***********弹窗-修改密码 start**********/
+.coordinates-password{width: 400px;}
+.coordinates-content .xiala-3{position: relative;background:url(../images/pass-input.gif) center right no-repeat ;width: 250px;height: 30px;padding-left: 65px;}
+.xiala-3 label{width: 72px;height: 30px;line-height: 30px;text-align: center;}
+.xiala-3 .fn-tips{width: 176px;height: 28px;border:1px solid #d2d2d2;}
+.coordinates  .button_password{height: 30px;position: relative;top: 17px !important;left: 65px;}
+/***********弹窗-修改密码 end**********/

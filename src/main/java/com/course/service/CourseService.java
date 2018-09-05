@@ -43,4 +43,11 @@ public interface CourseService {
      * @return
      */
     Course getCourseById(Integer id);
+
+    /**
+     *
+     * @param id
+     * @return
+     */
+    CourseResp getCourseRespById(Integer id);
 }

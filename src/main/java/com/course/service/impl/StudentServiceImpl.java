@@ -6,10 +6,7 @@ import com.course.entity.Student;
 import com.course.mapper.UserMapper;
 import com.course.service.CourseService;
 import com.course.service.StudentService;
-import com.course.vo.param.CourseReq;
-import com.course.vo.param.CourseResp;
-import com.course.vo.param.StudentReq;
-import com.course.vo.param.StudentResp;
+import com.course.vo.param.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -181,7 +178,7 @@ public class StudentServiceImpl implements StudentService {
     }
 
     @Override
-    public List<CourseResp> studentSuccessCourse(Integer studentId) {
+    public List<CourseRecordResp> studentSuccessCourse(Integer studentId) {
 
         return userMapper.studentSuccessCourse(studentId);
     }

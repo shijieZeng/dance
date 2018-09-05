@@ -36,5 +36,8 @@ public interface CourseMapper {
 
     @Select("SELECT * FROM course WHERE id=#{id}")
     Course getcourseById(Integer id);
+
+    @Select("SELECT * FROM course WHERE id=#{id}")
+    CourseResp getCourseRespById(Integer id);
     
 }

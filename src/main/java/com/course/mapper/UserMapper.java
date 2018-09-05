@@ -3,6 +3,7 @@ package com.course.mapper;
 import com.course.entity.Course;
 import com.course.entity.CourseRecord;
 import com.course.entity.Student;
+import com.course.vo.param.CourseRecordResp;
 import com.course.vo.param.CourseResp;
 import com.course.vo.param.StudentResp;
 import org.apache.ibatis.annotations.*;
@@ -66,6 +67,6 @@ public interface UserMapper {
     @Select("SELECT * FROM course_record WHERE id=#{id}")
     CourseRecord getCourseRecordById(Integer id);
 
-    @Select("SELECT c.* from course c, course_record cr WHERE c.ID=cr.courseId and cr.`status`=0 AND cr.studentId=#{studentId}")
-    List<CourseResp> studentSuccessCourse(Integer studentId);
+    @Select("SELECT c.*,cr.id as crId from course c, course_record cr WHERE c.ID=cr.courseId and cr.`status`=0 AND cr.studentId=#{studentId}")
+    List<CourseRecordResp> studentSuccessCourse(Integer studentId);
 }
