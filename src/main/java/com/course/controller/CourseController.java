@@ -53,4 +53,19 @@ public class CourseController {
         }
         return resResult;
     }
+
+    @GetMapping("/getCourseById")
+    public ResResult getCourseById(@RequestParam("tid") int tid) {
+        logger.debug("GET /course/getCourseById params {teacherId={}}", tid);
+        CourseResp courseResp = courseService.getCourseRespById(tid);
+        ResResult resResult = new ResResult(0, "success");
+        if (courseResp == null) {
+            resResult.setData("");
+        } else {
+            resResult.setData(courseResp);
+        }
+
+        return resResult;
+
+    }
 }

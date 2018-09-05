@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title></title>
+    <link href="/css/normalize.css" rel="stylesheet" type="text/css">
+    <link href="/css/base.css" rel="stylesheet" type="text/css">
+    <link href="/css/style.css" rel="stylesheet" type="text/css">
+    <link href="/css/custom.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div class="coordinates coordinates-password" style="top:0px;">
+        <div class="box">
+            <h1 class="wz-blue w18">添加课程</h1>
+        </div>
+        <div class="coordinates-content">
+            <div class="xiala-3">
+                <label class="fl wz-blue ">课程名称</label><span style="line-height: 30px;line-height: 30px;" class=" wz-blue" id="userName"/>
+            </div>
+            <div class="xiala-3 mt-10" style="height:60px;">
+                <label class="fl wz-blue " style="height:60px;line-height: 60px;">老师简介</label><span style="line-height: 60px;line-height: 60px;" class=" wz-blue" id="remark"/>
+            </div>
+            <div class="xiala-3 mt-10">
+                <label class="fl wz-blue ">性别</label><span style="line-height: 30px;line-height: 30px;" class=" wz-blue" id="gender"/>
+            </div>
+            <div class="xiala-3 mt-10">
+                <label class="fl wz-blue ">手机号</label><span style="line-height: 30px;line-height: 30px;" class=" wz-blue" id="mobile"/>
+            </div>
+        </div>
+        <div class="button_box button_password">
+            <div class="btn-left"><a href="javascript:void(0)" id="closeBtn" class="btn-submit btn-submit-red">取消</a></div>
+        </div>
+    </div>
+
+
+<script src="/js/jquery-3.3.1.min.js" type="text/javascript"></script>
+<script src="/js/util.js" type="text/javascript"></script>
+<script src="/js/teacher.js" type="text/javascript"></script>
+<script type="text/javascript">
+
+$(document).ready(function(){
+    var url = decodeURI(window.location.href);
+    var argsIndex = url .split("?tid=");
+    var id = argsIndex[1];
+    //alert(id);
+    teacher.teacher_detail(id);
+});
+</script>
+</body>
+</html>

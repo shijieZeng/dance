@@ -2,6 +2,7 @@ package com.course.controller;
 
 import com.course.service.StudentService;
 import com.course.vo.ResResult;
+import com.course.vo.param.CourseRecordResp;
 import com.course.vo.param.CourseResp;
 import com.course.vo.param.StudentReq;
 import com.course.vo.param.StudentResp;
@@ -65,7 +66,7 @@ public class StudentController {
      */
     @GetMapping("/studentById")
     public ResResult studentById(@RequestParam("id") int id) {
-        logger.debug("POST /student/studentById params {id={}}", id);
+        logger.debug("GET /student/studentById params {id={}}", id);
 
         StudentResp student = studentService.studentById(id);
         ResResult resResult = new ResResult(0, "success");
@@ -169,14 +170,14 @@ public class StudentController {
 
     /**
      * 取消课程
-     * @param id
+     * @param crId
      * @return
      */
     @PostMapping("/cancelCourse")
-    public ResResult cancelCourse(@RequestParam("id") int id) {
-        logger.debug("POST /student/cancelCourse params {id={}}", id);
+    public ResResult cancelCourse(@RequestParam("crId") int crId) {
+        logger.debug("POST /student/cancelCourse params {id={}}", crId);
 
-        int code = studentService.cancelCourse(id);
+        int code = studentService.cancelCourse(crId);
         ResResult resResult = new ResResult();
 
         if (code == -1) {
@@ -196,7 +197,7 @@ public class StudentController {
      */
     @GetMapping("/successCourse")
     public ResResult studentSuccessCourse() {
-        logger.debug("POST /student/successCourse params {}");
+        logger.debug("GET /student/successCourse params {}");
 
         HttpSession session = getRequest().getSession();
         Object sid = session.getAttribute("studentId");
@@ -209,7 +210,7 @@ public class StudentController {
         }
         int studentId = (int)sid;
 
-        List<CourseResp> studentList = studentService.studentSuccessCourse(studentId);
+        List<CourseRecordResp> studentList = studentService.studentSuccessCourse(studentId);
 
         if (studentList == null || studentList.size() <= 0) {
             resResult.setData("");

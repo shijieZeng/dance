@@ -119,4 +119,9 @@ public class CourseServiceImpl implements CourseService {
     public Course getCourseById(Integer id) {
         return courseMapper.getcourseById(id);
     }
+
+    @Override
+    public CourseResp getCourseRespById(Integer id) {
+        return courseMapper.getCourseRespById(id);
+    }
 }

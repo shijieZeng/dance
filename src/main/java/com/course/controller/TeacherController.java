@@ -85,7 +85,7 @@ public class TeacherController {
      */
     @GetMapping("/teacherAll")
     public ResResult teacherAll() {
-        logger.debug("POST /teacher/teacherAll params {}");
+        logger.debug("GET /teacher/teacherAll params {}");
 
         List<TeacherResp> teacherList = teacherService.teacherAll();
         ResResult resResult = new ResResult(0, "success");

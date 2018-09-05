@@ -1,6 +1,7 @@
 package com.course.service;
 
 import com.course.entity.Student;
+import com.course.vo.param.CourseRecordResp;
 import com.course.vo.param.CourseResp;
 import com.course.vo.param.StudentReq;
 import com.course.vo.param.StudentResp;
@@ -65,6 +66,6 @@ public interface StudentService {
      * @param studentId
      * @return
      */
-    List<CourseResp> studentSuccessCourse(Integer studentId);
+    List<CourseRecordResp> studentSuccessCourse(Integer studentId);
 
 }
