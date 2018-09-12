@@ -4,6 +4,67 @@ var admin = {
         $("#header").load("/admin/header.html");
         $("#left").load("/admin/left.html");
     },
+    //登录初始化事件
+            login_init : function(type) {
+                $("#username").focus( function(){
+                    if($("#username").val() != "" && $("#username").val() == "请输入登录名") {
+                        $("#username").val("");
+                    }
+                    $("#usernamError").html("");
+                } );
+                $("#password").focus( function(){
+                    if($("#password").val() != "" && $("#password").val() == "请输入密码") {
+                        $("#password").val("");
+                    }
+                    $("#passwordError").html("");
+                } ).keydown(function(event){
+                    //回车
+                    if(event.keyCode == 13){
+                        $("#btnLogin").trigger("click");
+                    }
+                });
+
+                $("#btnLogin").click( function(){
+                    return admin.checkForm(type);
+                } );
+            },
+            //用户登录
+            checkForm : function() {
+        		var errFlag = false;
+        		var username = $("#username").val();
+        		if( username == null || username == ""  || username == "请输入登录名") {
+                    $("#usernamError").html("<em class=\"icon-biaozhi \"></em>请输入用户名aaa");
+                   errFlag  = true;
+                }
+                var password = $("#password").val();
+                if( password == null || password == "" || username == "请输入密码") {
+                    $("#passwordError").html("<em class=\"icon-biaozhi \"></em>请输入密码");
+                    errFlag  = true;
+                }
+
+        		if(errFlag)
+        			return false;
+
+        		$("#btnLogin").hide();
+        		$('#btnLogin').after("<span id='waitInfo' class='waitInfo'>正在登录，请稍等！</span>");
+        		$.ajax({
+        			type: "post",
+        			url: "/admin/login",
+        			data: {"loginName":username,"password":password},
+        			dataType: "json",
+        			success: function(data){
+        				if(data.code != 0) {
+        					errFlag  = true;
+        					$("#j_userPasswordError").show();
+        					commonUtil.clearWaitInfo();
+        					$("#btnLogin").show();
+        				}
+        				else{
+        				    window.location.href = "/admin/courseList.html";
+        				}
+        			}
+        		});
+        	},
     //添加课程初始化方法
     course_add_init : function() {
         //获取所有老师，填充数据
