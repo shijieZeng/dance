@@ -117,7 +117,14 @@ var user = {
         url = encodeURI(url);
         commonUtil.popup_page(402,400, url,'');
     },
-
+    //异步加载课程数据
+    success_course_list_init : function() {
+        $.get("/student/successCourse", function(data){
+            if(data.code == 0) {
+                user.success_course_list_call_back(data.data); //填充数据
+            }
+        });
+    },
     //回调方法，填充课程列表数据
     success_course_list_call_back : function(data) {
         var str = "";

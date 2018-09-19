@@ -1,4 +1,9 @@
 var teacher = {
+//加载头部，左边菜单栏
+    _init_ : function() {
+        $("#header").load("/teacher/header.html");
+        $("#left").load("/teacher/left.html");
+    },
     //登录初始化事件
         login_init : function(type) {
             $("#username").focus( function(){
@@ -55,7 +60,7 @@ var teacher = {
     					$("#btnLogin").show();
     				}
     				else{
-    				    window.location.href = "/teacher/teacherDetail.html";
+    				    window.location.href = "/teacher/courseList.html";
     				}
     			}
     		});
