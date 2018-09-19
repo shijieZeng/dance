@@ -68,4 +68,12 @@ public interface StudentService {
      */
     List<CourseRecordResp> studentSuccessCourse(Integer studentId);
 
+    /**
+     *
+     * @param oldPwd
+     * @param newPwd
+     * @return
+     */
+    int changePwd(int studentId, String oldPwd, String newPwd);
+
 }

@@ -117,14 +117,7 @@ var user = {
         url = encodeURI(url);
         commonUtil.popup_page(402,400, url,'');
     },
-    //异步加载课程数据
-    success_course_list_init : function() {
-        $.get("/student/successCourse", function(data){
-            if(data.code == 0) {
-                user.success_course_list_call_back(data.data); //填充数据
-            }
-        });
-    },
+
     //回调方法，填充课程列表数据
     success_course_list_call_back : function(data) {
         var str = "";
@@ -159,4 +152,58 @@ var user = {
             }
         );
     },
+
+    //修改密码
+    change_pwd_do : function() {
+        var oldPwd = $("#oldPwd").val();
+        if( oldPwd == null || oldPwd == "") {
+            alert("请输入原密码");
+            return false;
+        }
+        var newPwd = $("#newPwd").val();
+        if( newPwd == null || newPwd == "") {
+            alert("请输入新密码");
+            return false;
+        }
+        var newPwdAgain = $("#newPwdAgain").val();
+        if( newPwdAgain == null || newPwdAgain == "") {
+            alert("请输入确认密码");
+            return false;
+        }
+        if (newPwd != newPwdAgain) {
+            alert("新密码两次输入不一致");
+            return false;
+        }
+
+        //$("#btnLogin").hide();
+        //$('#btnLogin').after("<span id='waitInfo' class='waitInfo'>正在登录，请稍等！</span>");
+        $.ajax({
+            type: "post",
+            url: "/student/change_pwd",
+            data: {"oldPwd":oldPwd,"newPwd":newPwd},
+            dataType: "json",
+            success: function(data){
+                if(data.code != 0) {
+                    alert(data.msg);
+                    //$("#j_userPasswordError").show();
+                    commonUtil.clearWaitInfo();
+                    //$("#btnLogin").show();
+                }
+                else{
+                    alert("修改成功");
+                    window.location.href = "/student/courseList.html";
+                }
+            }
+        });
+    },
+
+    //修改密码
+    change_pwd : function() {
+       $("#changePwdBtn").click(function(){
+            user.change_pwd_do();
+        });
+       $("#closeBtn").click( function() {
+            commonUtil.closeBtn();
+       });
+    }
 };
