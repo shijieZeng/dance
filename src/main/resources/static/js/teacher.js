@@ -65,6 +65,35 @@ var teacher = {
     			}
     		});
     	},
+    //异步加载课程数据
+    success_course_list_init : function() {
+        $.get("/teacher/successCourse", function(data){
+            if(data.code == 0) {
+                teacher.success_course_list_call_back(data.data); //填充数据
+            }
+        });
+    },
+    //回调方法，填充课程列表数据
+    success_course_list_call_back : function(data) {
+        var str = "";
+        $.each(data, function(index, item){
+            str += '<tr class="trA" >';
+            str += "<td align=\"center\" class=\"td-100\">"+item.courseName+"</td>";
+            str += "<td align=\"center\" class=\"td-210\">"+item.note+"</td>";
+            str += "<td align=\"center\" class=\"td-120\">"+item.beginTime+"</td>";
+            str += "<td align=\"center\" class=\"td-120\">"+item.endTime+"</td>";
+            str += "<td align=\"center\" class=\"td-80\">"+item.duration+"分钟</td>";
+            str += "<td align=\"center\" class=\"td-80\">"+item.currNum+"</td>";
+            str += "<td align=\"center\" class=\"td-80\">"+item.numLimit+"</td>";
+            str += "<td align=\"center\" class=\"td-80\">";
+            //str += "<a onclick=\"user.viewTeacher("+item.teacherId+")\" href=\"javascript:void(0);\">［老师详情］</a></td>";
+
+            str += "<td align=\"center\" class=\"td-90\">";
+            //str += "<a onclick=\"user.cancelCourse("+item.crId+")\" href=\"javascript:void(0);\">［取消课程］</a></td>";
+            str += "</tr>";
+        });
+        $("#tlist").html(str);
+    },
     //查询老师详细信息，并填充数据
     teacher_detail : function(id) {
         $.get("/teacher/teacherById", {"id": id}, function(data){
