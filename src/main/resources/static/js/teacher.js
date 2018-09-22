@@ -66,6 +66,32 @@ var teacher = {
     		});
     	},
     //异步加载课程数据
+    course_list_init : function() {
+        $.get("/course/courseAll", function(data){
+            if(data.code == 0) {
+                teacher.course_list_call_back(data.data); //填充数据
+            }
+        });
+    },
+    //回调方法，填充课程列表数据
+    course_list_call_back : function(data) {
+        var str = "";
+        $.each(data, function(index, item){
+            str += '<tr class="trA" >';
+            str += "<td align=\"center\" class=\"td-100\">"+item.courseName+"</td>";
+            str += "<td align=\"center\" class=\"td-210\">"+item.note+"</td>";
+            str += "<td align=\"center\" class=\"td-120\">"+item.beginTime+"</td>";
+            str += "<td align=\"center\" class=\"td-120\">"+item.endTime+"</td>";
+            str += "<td align=\"center\" class=\"td-80\">"+item.duration+"分钟</td>";
+            str += "<td align=\"center\" class=\"td-80\">"+item.currNum+"</td>";
+            str += "<td align=\"center\" class=\"td-80\">"+item.numLimit+"</td>";
+            str += "<td align=\"center\" class=\"td-80\">";
+
+            str += "</tr>";
+        });
+        $("#tlist").html(str);
+    },
+    //异步加载课程数据
     success_course_list_init : function() {
         $.get("/teacher/successCourse", function(data){
             if(data.code == 0) {
