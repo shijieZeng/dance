@@ -182,4 +182,24 @@ public class StudentServiceImpl implements StudentService {
 
         return userMapper.studentSuccessCourse(studentId);
     }
+
+    @Override
+    public int changePwd(int studentId, String oldPwd, String newPwd) {
+        StudentResp studentResp = this.studentById(studentId);
+        if (!studentResp.getPassword().equals(oldPwd)) {
+            return -1;
+        }
+
+        StudentReq studentReq = new StudentReq();
+        studentReq.setLoginName(studentResp.getLoginName());
+        studentReq.setPassword(newPwd);
+        studentReq.setUserName(studentResp.getUserName());
+        studentReq.setGender(studentResp.getGender());
+        studentReq.setMobile(studentResp.getMobile());
+        studentReq.setAddress(studentResp.getAddress());
+        studentReq.setRemainNum(studentResp.getRemainNum());
+        this.updateStudent(studentReq, studentResp.getId());
+
+        return 0;
+    }
 }

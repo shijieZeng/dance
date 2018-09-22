@@ -221,4 +221,38 @@ public class StudentController {
         return resResult;
     }
 
+    /**
+     * 修改密码
+     * @param oldPwd
+     * @param newPwd
+     * @return
+     */
+    @PostMapping("/change_pwd")
+    public ResResult change_pwd(@RequestParam("oldPwd") String oldPwd, @RequestParam("newPwd") String newPwd) {
+        logger.debug("POST /student/change_pwd params {oldPwd={},newPwd={}}",
+                oldPwd,newPwd);
+
+        HttpSession session = getRequest().getSession();
+        Object sid = session.getAttribute("studentId");
+        ResResult resResult = new ResResult();
+        if (sid == null) {
+            resResult.setCode(-1);
+            resResult.setMsg("请登录");
+            resResult.setData("");
+            return resResult;
+        }
+        int studentId = (int)sid;
+
+        int code = studentService.changePwd(studentId, oldPwd,newPwd);
+
+        if (code == -1) {
+            resResult.setCode(-1);
+            resResult.setMsg("原密码错误");
+            resResult.setData("");
+            return resResult;
+        }
+
+        return ResResult.success();
+    }
+
 }

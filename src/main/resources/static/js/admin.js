@@ -4,6 +4,67 @@ var admin = {
         $("#header").load("/admin/header.html");
         $("#left").load("/admin/left.html");
     },
+    //登录初始化事件
+            login_init : function(type) {
+                $("#username").focus( function(){
+                    if($("#username").val() != "" && $("#username").val() == "请输入登录名") {
+                        $("#username").val("");
+                    }
+                    $("#usernamError").html("");
+                } );
+                $("#password").focus( function(){
+                    if($("#password").val() != "" && $("#password").val() == "请输入密码") {
+                        $("#password").val("");
+                    }
+                    $("#passwordError").html("");
+                } ).keydown(function(event){
+                    //回车
+                    if(event.keyCode == 13){
+                        $("#btnLogin").trigger("click");
+                    }
+                });
+
+                $("#btnLogin").click( function(){
+                    return admin.checkForm(type);
+                } );
+            },
+            //用户登录
+            checkForm : function() {
+        		var errFlag = false;
+        		var username = $("#username").val();
+        		if( username == null || username == ""  || username == "请输入登录名") {
+                    $("#usernamError").html("<em class=\"icon-biaozhi \"></em>请输入用户名aaa");
+                   errFlag  = true;
+                }
+                var password = $("#password").val();
+                if( password == null || password == "" || username == "请输入密码") {
+                    $("#passwordError").html("<em class=\"icon-biaozhi \"></em>请输入密码");
+                    errFlag  = true;
+                }
+
+        		if(errFlag)
+        			return false;
+
+        		$("#btnLogin").hide();
+        		$('#btnLogin').after("<span id='waitInfo' class='waitInfo'>正在登录，请稍等！</span>");
+        		$.ajax({
+        			type: "post",
+        			url: "/admin/login",
+        			data: {"loginName":username,"password":password},
+        			dataType: "json",
+        			success: function(data){
+        				if(data.code != 0) {
+        					errFlag  = true;
+        					$("#j_userPasswordError").show();
+        					commonUtil.clearWaitInfo();
+        					$("#btnLogin").show();
+        				}
+        				else{
+        				    window.location.href = "/admin/courseList.html";
+        				}
+        			}
+        		});
+        	},
     //添加课程初始化方法
     course_add_init : function() {
         //获取所有老师，填充数据
@@ -193,5 +254,39 @@ var admin = {
                 }
             }
         });
-    }
+    },
+	
+	 //异步加载学员信息
+    student_list_init : function() {
+        $.get("/student/studentAll", function(data){
+            if(data.code == 0) {
+                admin.student_list_call_back(data.data); //填充数据
+            }
+        });
+    },
+    //回调方法，填充学员信息列表数据
+    student_list_call_back : function(data) {
+        var str = "";
+        $.each(data, function(index, item){
+            str += '<tr class="trA" >';
+            str += "<td align=\"center\" class=\"td-100\">"+item.id+"</td>";
+            str += "<td align=\"center\" class=\"td-210\">"+item.loginName+"</td>";
+			str += "<td align=\"center\" class=\"td-80\">"+item.createTime+"</td>";
+            str += "<td align=\"center\" class=\"td-120\">"+item.mobile+"</td>";
+            str += "<td align=\"center\" class=\"td-120\">"+item.address+"</td>";
+            str += "<td align=\"center\" class=\"td-80\">"+item.remainNum+"</td>";
+            /*str += "<td align=\"center\" class=\"td-80\">"+item.currNum+"</td>";
+            str += "<td align=\"center\" class=\"td-80\">"+item.numLimit+"</td>";
+            str += "<td align=\"center\" class=\"td-80\">";
+            str += "<a onclick=\"user.viewTeacher("+item.teacherId+")\" href=\"javascript:void(0);\">［老师详情］</a></td>";
+            if(item.status == 1) {
+                str += "<td align=\"center\" class=\"td-90\">已约满</td>";
+            } else {
+                str += "<td align=\"center\" class=\"td-90\">可预约";
+                str += "<a onclick=\"admin.edit_course("+item.id+")\" href=\"javascript:void(0);\">［修改］</a></td>";
+            }*/
+            str += "</tr>";
+        });
+        $("#tlist").html(str);
+    }	
 };

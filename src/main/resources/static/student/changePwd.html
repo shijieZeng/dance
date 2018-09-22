@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>舞蹈管理系统</title>
+    <link href="/css/normalize.css" rel="stylesheet" type="text/css">
+    <link href="/css/base.css" rel="stylesheet" type="text/css">
+    <link href="/css/style.css" rel="stylesheet" type="text/css">
+    <link href="/css/custom.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div  id="header"></div>
+<div class="father_box">
+    <div  id="left"></div>
+    <div class="coordinates coordinates-password" style="top:0px;">
+        <div class="box">
+            <h1 class="wz-blue w18">修改密码</h1>
+        </div>
+        <div class="coordinates-content">
+            <div class="xiala-3">
+                <label class="fl wz-blue ">原密码</label><input class="i-text fn-tips wz-blue" id="oldPwd" type="text">
+            </div>
+            <div class="xiala-3">
+                <label class="fl wz-blue ">新密码</label><input class="i-text fn-tips wz-blue" id="newPwd" type="text">
+            </div>
+            <div class="xiala-3">
+                <label class="fl wz-blue ">确认密码</label><input id="newPwdAgain" class="i-text fn-tips wz-blue" type="text">
+            </div>
+        </div>
+        <div class="button_box button_password">
+            <div class="btn-left"><a href="javascript:void(0)" id="closeBtn" class="btn-submit btn-submit-red">取消</a></div>
+            <div class="btn-right"><a href="javascript:void(0)" id="changePwdBtn" class="btn-submit btn-submit-blue">确认</a></div>
+        </div>
+    </div>
+
+</div>
+
+<script src="/js/jquery-3.3.1.min.js" type="text/javascript"></script>
+<script src="/js/util.js" type="text/javascript"></script>
+<script src="/js/user.js" type="text/javascript"></script>
+<script language="javascript" type="text/javascript" src="/js/My97DatePicker/WdatePicker.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+    user._init_();
+    user.change_pwd();
+});
+</script>
+</body>
+</html>
