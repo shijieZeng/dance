@@ -42,4 +42,11 @@ public interface TeacherService {
      */
     int teacherByLoginName(String loginName, String password);
 
+	 /**
+     *
+     * @param oldPwd
+     * @param newPwd
+     * @return
+     */
+    int changePwd(int teacherId, String oldPwd, String newPwd);	
 }
