@@ -113,5 +113,95 @@ var teacher = {
         $("#closeBtn").click( function() {
             commonUtil.closeBtn();
         });
+    },
+	
+	  //修改密码
+    change_pwd_do : function() {
+        var oldPassWord = $("#oldPassWord").val();
+        if( oldPassWord == null || oldPassWord == "") {
+            alert("请输入原密码");
+            return false;
+        }
+        var newPassWord = $("#newPassWord").val();
+        if( newPassWord == null || newPassWord == "") {
+            alert("请输入新密码");
+            return false;
+        }
+        var newPassWordConfirm = $("#newPassWordConfirm").val();
+        if( newPassWordConfirm == null || newPassWordConfirm == "") {
+            alert("请输入确认密码");
+            return false;
+        }
+        if (newPassWord != newPassWordConfirm) {
+            alert("新密码两次输入不一致");
+            return false;
+        }
+
+        //$("#btnLogin").hide();
+        //$('#btnLogin').after("<span id='waitInfo' class='waitInfo'>正在登录，请稍等！</span>");
+        $.ajax({
+            type: "post",
+            url: "/teacher/change_pwd",
+            data: {"oldPassWord":oldPassWord,"newPassWord":newPassWord},
+            dataType: "json",
+            success: function(data){
+                if(data.code != 0) {
+                    alert(data.msg);
+                    //$("#j_userPasswordError").show();
+                    commonUtil.clearWaitInfo();
+                    //$("#btnLogin").show();
+                }
+                else{
+                    alert("修改成功");
+                    window.location.href = "/teacher/courseList.html";
+                }
+            }
+        });
+    },
+
+    //修改密码
+    change_pwd : function() {
+       $("#changePwdBtn").click(function(){
+            user.change_pwd_do();
+        });
+       $("#closeBtn").click( function() {
+            commonUtil.closeBtn();
+       });
+    },
+	
+	//异步加载教师上课信息
+    Tcourse_list_init : function() {
+        $.get("/teacher/successCourse", function(data){
+            if(data.code == 0) {
+                admin.Tcourse_list_call_back(data.data); //填充数据
+            }
+        });
+    },
+    //回调方法，填充教师上课信息列表数据
+    Tcourse_list_call_back : function(data) {
+        var str = "";
+        $.each(data, function(index, item){
+            str += '<tr class="trA" >';
+            str += "<td align=\"center\" class=\"td-100\">"+item.courseName+"</td>";
+            str += "<td align=\"center\" class=\"td-210\">"+item.note+"</td>";
+			str += "<td align=\"center\" class=\"td-120\">"+item.beginTime+"</td>";
+            str += "<td align=\"center\" class=\"td-120\">"+item.endTime+"</td>";
+            str += "<td align=\"center\" class=\"td-80\">"+item.duration+"</td>";
+            str += "<td align=\"center\" class=\"td-80\">"+item.currNum+"</td>";
+			str += "<td align=\"center\" class=\"td-80\">"+item.numLimit+"</td>";
+			str += "<td align=\"center\" class=\"td-80\">"+item.createTime+"</td>";
+            /*str += "<td align=\"center\" class=\"td-80\">"+item.currNum+"</td>";
+            str += "<td align=\"center\" class=\"td-80\">"+item.numLimit+"</td>";
+            str += "<td align=\"center\" class=\"td-80\">";
+            str += "<a onclick=\"user.viewTeacher("+item.teacherId+")\" href=\"javascript:void(0);\">［老师详情］</a></td>";
+            if(item.status == 1) {
+                str += "<td align=\"center\" class=\"td-90\">已约满</td>";
+            } else {
+                str += "<td align=\"center\" class=\"td-90\">可预约";
+                str += "<a onclick=\"admin.edit_course("+item.id+")\" href=\"javascript:void(0);\">［修改］</a></td>";
+            }*/
+            str += "</tr>";
+        });
+        $("#tlist").html(str);
     }
 };

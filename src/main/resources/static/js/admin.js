@@ -254,5 +254,39 @@ var admin = {
                 }
             }
         });
-    }
+    },
+	
+	 //异步加载学员信息
+    student_list_init : function() {
+        $.get("/student/studentAll", function(data){
+            if(data.code == 0) {
+                admin.student_list_call_back(data.data); //填充数据
+            }
+        });
+    },
+    //回调方法，填充学员信息列表数据
+    student_list_call_back : function(data) {
+        var str = "";
+        $.each(data, function(index, item){
+            str += '<tr class="trA" >';
+            str += "<td align=\"center\" class=\"td-100\">"+item.id+"</td>";
+            str += "<td align=\"center\" class=\"td-210\">"+item.loginName+"</td>";
+			str += "<td align=\"center\" class=\"td-80\">"+item.createTime+"</td>";
+            str += "<td align=\"center\" class=\"td-120\">"+item.mobile+"</td>";
+            str += "<td align=\"center\" class=\"td-120\">"+item.address+"</td>";
+            str += "<td align=\"center\" class=\"td-80\">"+item.remainNum+"</td>";
+            /*str += "<td align=\"center\" class=\"td-80\">"+item.currNum+"</td>";
+            str += "<td align=\"center\" class=\"td-80\">"+item.numLimit+"</td>";
+            str += "<td align=\"center\" class=\"td-80\">";
+            str += "<a onclick=\"user.viewTeacher("+item.teacherId+")\" href=\"javascript:void(0);\">［老师详情］</a></td>";
+            if(item.status == 1) {
+                str += "<td align=\"center\" class=\"td-90\">已约满</td>";
+            } else {
+                str += "<td align=\"center\" class=\"td-90\">可预约";
+                str += "<a onclick=\"admin.edit_course("+item.id+")\" href=\"javascript:void(0);\">［修改］</a></td>";
+            }*/
+            str += "</tr>";
+        });
+        $("#tlist").html(str);
+    }	
 };
