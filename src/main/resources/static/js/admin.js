@@ -289,4 +289,27 @@ var admin = {
         });
         $("#tlist").html(str);
     }	
+
+    //异步加载课程数据
+    teacher_list_init : function() {
+        $.get("/teacher/teacherAll", function(data){
+            if(data.code == 0) {
+                admin.teacher_list_call_back(data.data); //填充数据
+            }
+        });
+    },
+    //回调方法，填充课程列表数据
+    teacher_list_call_back : function(data) {
+        var str = "";
+        $.each(data, function(index, item){
+            str += '<tr class="trA" >';
+            str += "<td align=\"center\" >"+item.userName+"</td>";
+            str += "<td align=\"center\" >"+item.gender+"</td>";
+            str += "<td align=\"center\" >"+item.mobile+"</td>";
+            str += "<td align=\"center\" >"+item.address+"</td>";
+            str += "<td align=\"center\" class=\"td-80\">";
+            str += "</tr>";
+        });
+        $("#tlist").html(str);
+    }
 };
