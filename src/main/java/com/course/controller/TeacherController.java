@@ -169,7 +169,7 @@ public class TeacherController {
         }
         int teacherId = (int)tid;
 
-        int code = studentService.changePwd(teacherId, oldPwd,newPwd);
+        int code = -1;//studentService.changePwd(teacherId, oldPwd,newPwd);
 
         if (code == -1) {
             resResult.setCode(-1);
