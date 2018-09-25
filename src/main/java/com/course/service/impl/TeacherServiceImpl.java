@@ -89,8 +89,8 @@ public class TeacherServiceImpl implements TeacherService {
         teacherReq.setGender(teacherResp.getGender());
         teacherReq.setMobile(teacherResp.getMobile());
         teacherReq.setAddress(teacherResp.getAddress());
-        teacherReq.setRemainNum(teacherResp.getRemainNum());
-        this.updateStudent(teacherReq, teacherResp.getId());
+        teacherReq.setRemark(teacherResp.getRemark());
+        this.updateTeacher(teacherReq, teacherResp.getId());
 
         return 0;
     }

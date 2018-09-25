@@ -274,17 +274,7 @@ var admin = {
 			str += "<td align=\"center\" class=\"td-80\">"+item.createTime+"</td>";
             str += "<td align=\"center\" class=\"td-120\">"+item.mobile+"</td>";
             str += "<td align=\"center\" class=\"td-120\">"+item.address+"</td>";
-            str += "<td align=\"center\" class=\"td-80\">"+item.remainNum+"</td>";
-            /*str += "<td align=\"center\" class=\"td-80\">"+item.currNum+"</td>";
-            str += "<td align=\"center\" class=\"td-80\">"+item.numLimit+"</td>";
-            str += "<td align=\"center\" class=\"td-80\">";
-            str += "<a onclick=\"user.viewTeacher("+item.teacherId+")\" href=\"javascript:void(0);\">［老师详情］</a></td>";
-            if(item.status == 1) {
-                str += "<td align=\"center\" class=\"td-90\">已约满</td>";
-            } else {
-                str += "<td align=\"center\" class=\"td-90\">可预约";
-                str += "<a onclick=\"admin.edit_course("+item.id+")\" href=\"javascript:void(0);\">［修改］</a></td>";
-            }*/
+            str += "<td align=\"center\" class=\"td-80\">"+item.remainNum+"</td>";    
             str += "</tr>";
         });
         $("#tlist").html(str);
