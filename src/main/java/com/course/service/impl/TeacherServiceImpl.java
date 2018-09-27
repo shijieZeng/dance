@@ -78,9 +78,9 @@ public class TeacherServiceImpl implements TeacherService {
 	@Override
     public int changePwd(int teacherId, String oldPwd, String newPwd) {
         TeacherResp teacherResp = this.teacherById(teacherId);
-        if (!teacherResp.getPassword().equals(oldPwd)) {
-            return -1;
-        }
+//        if (!teacherResp.getPassword().equals(oldPwd)) {
+//            return -1;
+//        }
 
         TeacherReq teacherReq = new TeacherReq();
         teacherReq.setLoginName(teacherResp.getLoginName());
@@ -89,8 +89,8 @@ public class TeacherServiceImpl implements TeacherService {
         teacherReq.setGender(teacherResp.getGender());
         teacherReq.setMobile(teacherResp.getMobile());
         teacherReq.setAddress(teacherResp.getAddress());
-        teacherReq.setRemainNum(teacherResp.getRemainNum());
-        this.updateStudent(teacherReq, teacherResp.getId());
+        teacherReq.setRemark(teacherResp.getRemark());
+        this.updateTeacher(teacherReq, teacherResp.getId());
 
         return 0;
     }
