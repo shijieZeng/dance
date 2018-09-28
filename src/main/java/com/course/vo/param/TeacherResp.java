@@ -1,6 +1,7 @@
 package com.course.vo.param;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import java.util.Date;
 
@@ -18,6 +19,8 @@ public class TeacherResp {
     private Integer status;
     @JsonFormat(timezone = "GMT+8", pattern = "yyyy-MM-dd HH:mm:ss")
     private Date createTime;
+    @JsonIgnore
+    private String password;
 
     public Integer getId() {
         return id;
@@ -90,5 +93,13 @@ public class TeacherResp {
 
     public void setCreateTime(Date createTime) {
         this.createTime = createTime;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 }

@@ -168,20 +168,30 @@ var teacher = {
         $.ajax({
             type: "post",
             url: "/teacher/change_pwd",
-            data: {"oldPassWord":oldPassWord,"newPassWord":newPassWord},
+            data: {"oldPwd":oldPassWord,"newPwd":newPassWord},
             dataType: "json",
             success: function(data){
                 if(data.code != 0) {
                     alert(data.msg);
                     //$("#j_userPasswordError").show();
-                    commonUtil.clearWaitInfo();
+                    //commonUtil.clearWaitInfo();
                     //$("#btnLogin").show();
                 }
                 else{
                     alert("修改成功");
                     window.location.href = "/teacher/courseList.html";
                 }
-            }
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+//                alert('亲爱的用户请不要频繁点击, 请稍后重试...');
+               alert(jqXHR.responseText);
+//               alert(jqXHR.status);
+//               alert(jqXHR.readyState);
+//               alert(jqXHR.statusText);
+               /*弹出其他两个参数的信息*/
+//               alert(textStatus);
+//               alert(errorThrown);
+           }
         });
     },
 

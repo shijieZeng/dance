@@ -33,7 +33,7 @@ var admin = {
         		var errFlag = false;
         		var username = $("#username").val();
         		if( username == null || username == ""  || username == "请输入登录名") {
-                    $("#usernamError").html("<em class=\"icon-biaozhi \"></em>请输入用户名aaa");
+                    $("#usernamError").html("<em class=\"icon-biaozhi \"></em>请输入用户名");
                    errFlag  = true;
                 }
                 var password = $("#password").val();
@@ -278,7 +278,7 @@ var admin = {
             str += "</tr>";
         });
         $("#tlist").html(str);
-    }	
+    },
 
     //异步加载课程数据
     teacher_list_init : function() {
